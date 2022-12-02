@@ -1,32 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useEffect } from 'react'
 import './App.css'
+import Location from './components/Location'
+import GetLocation from './hooks/useGetLocation'
 
 function App() {
-  const [count, setCount] = useState(0)
+  let randomLocation = Math.floor((Math.random() * 126)+1)
+  const location = GetLocation(randomLocation)
 
+  const handleChange = e => {
+    randomLocation = e.target.value    
+  }
+
+  const handleClick = e => {
+    e.preventDefault()
+    location = GetLocation(randomLocation)
+  }
+  useEffect(()=>{
+  
+  },[location])
+  
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Location location={location}/>
+
+      <form action="" de>
+        <input type="text" id='NewLocation' onChange={handleChange}/>
+        <button onClick={handleClick}> Search </button>
+      </form>
     </div>
   )
 }
