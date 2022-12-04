@@ -12,7 +12,7 @@ const ResidentInfo = ({ URL }) => {
             .catch(err => console.log(err))
     }, [])
 
-    console.log(residentInfo)
+
     return (
         <article>
             <div>
