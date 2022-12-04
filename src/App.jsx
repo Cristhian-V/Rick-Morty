@@ -1,32 +1,37 @@
-import { useEffect } from 'react'
+import axios from 'axios'
 import './App.css'
 import Location from './components/Location'
-import GetLocation from './hooks/useGetLocation'
+import ResidentInfo from './components/ResidentInfo'
+import useGetLocation from './hooks/useGetLocation'
 
 function App() {
-  let randomLocation = Math.floor((Math.random() * 126)+1)
-  const location = GetLocation(randomLocation)
+  const { location, getLocation } = useGetLocation()
+  let nweIdLocation
 
   const handleChange = e => {
-    randomLocation = e.target.value    
+    nweIdLocation = e.target.value
   }
 
   const handleClick = e => {
     e.preventDefault()
-    location = GetLocation(randomLocation)
+    getLocation(nweIdLocation)
   }
-  useEffect(()=>{
-  
-  },[location])
-  
+
+
   return (
     <div className="App">
-      <Location location={location}/>
-
-      <form action="" de>
-        <input type="text" id='NewLocation' onChange={handleChange}/>
-        <button onClick={handleClick}> Search </button>
+      <Location location={location} />
+      <form action="">
+        <input type="text" onChange={handleChange} />
+        <button onClick={handleClick}>Search</button>
       </form>
+      <div className='resedentInfo-container'>
+        {
+          location?.residents.map(URL => (
+            <ResidentInfo URL={URL} />
+          ))
+        }
+      </div>
     </div>
   )
 }
