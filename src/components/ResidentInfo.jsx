@@ -26,7 +26,7 @@ const ResidentInfo = ({ URL }) => {
                 <p className='residentCard-titleEpisode'>episodes where appear</p>
                 <p className='residentCard-episode'>{residentInfo?.episode.length}</p>
             </div>
-
+ 
         </article>
     )
 }
