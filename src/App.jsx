@@ -1,8 +1,11 @@
-import axios from 'axios'
 import './App.css'
 import Location from './components/Location'
 import ResidentInfo from './components/ResidentInfo'
 import useGetLocation from './hooks/useGetLocation'
+
+//Import de Imagenes
+import imagen from './assets/img/Rick-And-Morty.png'
+import imageLeters from './assets/img/Rick-And-Morty-L.png'
 
 function App() {
   const { location, getLocation } = useGetLocation()
@@ -20,6 +23,9 @@ function App() {
 
   return (
     <div className="App">
+      <figure className='container-image'>
+      <img src={imagen} alt="imagen de Rick and Morty" className='imgMovil'/>
+      </figure>
       <Location location={location} />
       <form action="">
         <input type="text" onChange={handleChange} />

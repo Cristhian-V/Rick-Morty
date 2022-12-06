@@ -14,17 +14,17 @@ const ResidentInfo = ({ URL }) => {
 
 
     return (
-        <article>
+        <article className='residentCard'>
             <div>
                 <img src={residentInfo?.image} alt="" />
             </div>
             <div>
-                <h2>{residentInfo?.name}</h2>
-                <p>{residentInfo?.status} - {residentInfo?.species}</p>
-                <p>origin</p>
-                <p>{residentInfo?.origin.name}</p>
-                <p>episodes where appear</p>
-                <p>{residentInfo?.episode.length}</p>
+                <h2 className='residentCard-title'>{residentInfo?.name}</h2>
+                <p className='residentCard-status'>{residentInfo?.status} - {residentInfo?.species}</p>
+                <p className='residentCard-titleOrigin'>origin</p>
+                <p className='residentCard-Origin'>{residentInfo?.origin.name}</p>
+                <p className='residentCard-titleEpisode'>episodes where appear</p>
+                <p className='residentCard-episode'>{residentInfo?.episode.length}</p>
             </div>
 
         </article>
