@@ -8,4 +8,14 @@
 body{
     font-size: 100%;
     list-style-type: none;
+    background-color: #05292E;
+    font-family: 'Roboto', sans-serif;
+}
+
+button{
+    border: none;
+}
+
+input{
+    border: none;
 }

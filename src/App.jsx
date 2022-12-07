@@ -26,11 +26,15 @@ function App() {
       <figure className='container-image'>
       <img src={imagen} alt="imagen de Rick and Morty" className='imgMovil'/>
       </figure>
+      <div className='location-container'>
       <Location location={location} />
+      </div>
+      <div className='form-container'>
       <form action="">
         <input type="text" onChange={handleChange} />
         <button onClick={handleClick}>Search</button>
       </form>
+      </div>
       <div className='resedentInfo-container'>
         {
           location?.residents.map(URL => (

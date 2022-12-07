@@ -4,12 +4,22 @@ const Location = ({ location }) => {
 
   return (
     <header>
-      <h1 className='header-name'>{location?.name}</h1>
-      <ul className='header-list'>
-        <li className='header-listDescription'><b>Type: </b> {location?.type}</li>
-        <li className='header-listDescription'><b> Dimension: </b>{location?.dimension}</li>
-        <li className='header-listDescription'><b> Population: </b> {location?.residents.length} </li>
-      </ul>
+      <div>
+      <label><b>Nombre: </b></label>
+      <label>{location?.name}</label>
+      </div>
+      <div>
+      <label><b>Tipo: </b></label>
+      <label>{location?.type}</label>
+      </div>
+      <div>
+      <label><b>Dimencion: </b></label>
+      <label>{location?.dimension}</label>
+      </div>
+      <div>
+      <label><b>Poblacion: </b></label>
+      <label>{location?.residents.length}</label>
+      </div>
     </header>
   )
 }
