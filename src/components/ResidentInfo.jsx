@@ -15,18 +15,29 @@ const ResidentInfo = ({ URL }) => {
 
     return (
         <article className='residentCard'>
+            <p className='residentCard-status'>{residentInfo?.status}</p>
             <div>
                 <img src={residentInfo?.image} alt="" />
             </div>
-            <div>
-                <h2 className='residentCard-title'>{residentInfo?.name}</h2>
-                <p className='residentCard-status'>{residentInfo?.status} - {residentInfo?.species}</p>
-                <p className='residentCard-titleOrigin'>origin</p>
-                <p className='residentCard-Origin'>{residentInfo?.origin.name}</p>
-                <p className='residentCard-titleEpisode'>episodes where appear</p>
-                <p className='residentCard-episode'>{residentInfo?.episode.length}</p>
+            <div className='recidentCard-info'>
+                <div>
+                    <h2 className='residentCard-name'>{residentInfo?.name}</h2>
+                    <hr />
+                </div>
+                <div>
+                    <p className='residentCard-titleSpecie'>SPECIE</p>
+                    <p className='residentCard-specie'>{residentInfo?.species}</p>
+                </div>
+                <div>
+                    <p className='residentCard-titleOrigin'>ORIGIN</p>
+                    <p className='residentCard-Origin'>{residentInfo?.origin.name}</p>
+                </div>
+                <div>
+                    <p className='residentCard-titleEpisode'>EPISODES WHERE APPEAR</p>
+                    <p className='residentCard-episode'>{residentInfo?.episode.length}</p>
+                </div>
             </div>
- 
+
         </article>
     )
 }
